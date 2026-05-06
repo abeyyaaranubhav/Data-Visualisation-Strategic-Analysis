@@ -1,0 +1,35 @@
+Project: Tata Data Visualisation Strategic Analysis
+Analyst: Sanyaritu Bhatia
+Date: April 2026
+
+DATA CLEANING & TRANSFORMATION LOG
+----------------------------------
+Tool Used: Power BI (Power Query / M-Engine)
+
+The following steps were performed to ensure data integrity and accuracy 
+before creating visualizations for the CEO and CMO:
+
+1. RECORD FILTERING (Quantity):
+   - Constraint: Quantity must be greater than or equal to 1.
+   - Logic: Removed all records with negative values to exclude 
+     returns, cancellations, and data entry errors from the sales analysis.
+
+2. RECORD FILTERING (Unit Price):
+   - Constraint: Unit Price must be greater than or equal to 0.
+   - Logic: Filtered out invalid pricing data to ensure revenue 
+     calculations remain accurate.
+
+3. CUSTOM CALCULATIONS (Revenue):
+   - Created a new calculated column [Revenue].
+   - Formula: [Quantity] * [UnitPrice]
+   - Purpose: To provide a primary KPI for trend analysis and 
+     ranking visuals.
+
+4. DATA TYPING:
+   - InvoiceDate: Converted to 'Date' format for time-series compatibility.
+   - Revenue: Formatted as 'Currency' (2 decimal places).
+   - Quantity: Formatted as 'Whole Number'.
+
+5. GEOSPATIAL STANDARDIZATION:
+   - Verified 'Country' names to ensure 100% mapping accuracy for 
+     the Global Demand Map visual.
